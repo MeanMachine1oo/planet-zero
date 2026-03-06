@@ -1,0 +1,12 @@
+.ticker { background: var(--green-dark); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+.track { display: inline-flex; animation: ticker 30s linear infinite; }
+.item {
+  display: inline-flex; align-items: center; gap: 24px; padding-right: 60px;
+  font-size: 12px; font-weight: 400; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(245,240,232,0.6);
+}
+.dot { width: 4px; height: 4px; border-radius: 50%; background: var(--coral); flex-shrink: 0; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

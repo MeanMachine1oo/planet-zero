@@ -1,0 +1,14 @@
+.section { padding: 120px 0; background: var(--cream); overflow: hidden; }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
+.header { margin-bottom: 64px; }
+.label { font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); opacity: 0.6; margin-bottom: 16px; }
+.headline { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(34px,3.5vw,52px); line-height: 1.1; letter-spacing: -0.02em; color: var(--black); max-width: 500px; }
+.grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.card { padding: 56px 40px; background: var(--cream-dark); position: relative; overflow: hidden; transition: background 0.3s; }
+.card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.card:hover { background: var(--cream); }
+.card:hover::after { transform: scaleX(1); }
+.emoji { font-size: 32px; margin-bottom: 24px; display: block; }
+.name { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 400; color: var(--black); margin-bottom: 12px; }
+.desc { font-size: 13px; font-weight: 300; color: rgba(17,20,16,0.5); line-height: 1.7; }
+@media (max-width: 900px) { .inner { padding: 0 32px; } .grid { grid-template-columns: 1fr; } }

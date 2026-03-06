@@ -1,0 +1,13 @@
+.section { padding: 120px 0; background: var(--white); }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
+.top { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 48px; }
+.label { font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); opacity: 0.6; margin-bottom: 16px; }
+.headline { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(34px,3.5vw,52px); line-height: 1.1; letter-spacing: -0.02em; color: var(--black); }
+.headline em { color: var(--green); font-style: italic; }
+.body { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(17,20,16,0.55); }
+.pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.pillar { padding: 32px 36px; background: var(--cream-dark); border-left: 3px solid transparent; transition: border-color 0.3s, background 0.3s; cursor: default; }
+.pillar:hover { border-color: var(--green); background: var(--cream); }
+.pillarLabel { font-size: 11px; color: var(--green); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+.pillarText { font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--black); }
+@media (max-width: 900px) { .inner { padding: 0 32px; } .top { grid-template-columns: 1fr; gap: 24px; } .pillars { grid-template-columns: 1fr; } }

@@ -1,0 +1,20 @@
+.section { padding: 120px 0; background: var(--cream); }
+.inner { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
+.header { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 80px; }
+.label { font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); opacity: 0.6; margin-bottom: 16px; }
+.headline { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(38px,4vw,58px); line-height: 1.1; letter-spacing: -0.02em; color: var(--black); }
+.headline em { font-style: italic; color: var(--green); }
+.intro { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(17,20,16,0.6); padding-top: 8px; }
+.grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.card { background: var(--cream-dark); padding: 48px 36px; position: relative; overflow: hidden; transition: background 0.35s; cursor: default; }
+.card:hover { background: var(--green); }
+.card:hover .layerNum, .card:hover .layerTitle, .card:hover .layerDesc { color: var(--cream); }
+.card:hover .iconWrap { background: rgba(245,240,232,0.12); }
+.card:hover .iconWrap svg { stroke: var(--cream); }
+.layerNum { font-family: 'Fraunces', serif; font-size: 11px; color: var(--sand); letter-spacing: 0.1em; margin-bottom: 32px; transition: color 0.3s; }
+.iconWrap { width: 48px; height: 48px; background: rgba(42,92,69,0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; transition: background 0.3s; }
+.iconWrap svg { width: 24px; height: 24px; stroke: var(--green); }
+.layerTitle { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; line-height: 1.2; color: var(--black); margin-bottom: 16px; transition: color 0.3s; }
+.layerDesc { font-size: 13px; font-weight: 300; line-height: 1.7; color: rgba(17,20,16,0.5); transition: color 0.3s; }
+.card:hover .layerDesc { color: rgba(245,240,232,0.65); }
+@media (max-width: 900px) { .inner { padding: 0 32px; } .header { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; } .grid { grid-template-columns: 1fr 1fr; } }
