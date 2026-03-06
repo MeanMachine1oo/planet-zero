@@ -1,6 +1,5 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "../schemas";
 
 export const sanityConfig = defineConfig({
@@ -35,7 +34,6 @@ export const sanityConfig = defineConfig({
               .child(S.document().schemaType("ticker").documentId("ticker")),
           ]),
     }),
-    visionTool(),
   ],
   schema: { types: schemaTypes },
 });
