@@ -3,13 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Planet Zero — Design for Net Zero Living",
-  description:
-    "Climate-adaptive infrastructure engineered for thermal comfort, wherever people live and work.",
-  openGraph: {
-    title: "Planet Zero — Design for Net Zero Living",
-    description: "4-layered smart living infrastructure designed for thermal comfort.",
-    siteName: "Planet Zero",
-  },
+  description: "Climate-adaptive infrastructure engineered for thermal comfort, wherever people live and work.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

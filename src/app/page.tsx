@@ -11,12 +11,10 @@ import { SectorsSection } from "@/components/SectorsSection";
 import { CtaSection } from "@/components/CtaSection";
 import { Footer } from "@/components/Footer";
 
-// Revalidate every 60 seconds (ISR) — content updates appear without a full redeploy
 export const revalidate = 60;
 
 export default async function Home() {
   const data = await client.fetch(PAGE_QUERY);
-
   return (
     <>
       <Nav settings={data.siteSettings} />

@@ -1,125 +1,55 @@
 import { groq } from "next-sanity";
 
-export const siteSettingsQuery = groq`
-  *[_type == "siteSettings"][0] {
-    siteName,
-    tagline,
-    footerTagline,
-    navLinks[] { label, href },
-    ctaLabel,
-    ctaHref
-  }
-`;
+const SITE_SETTINGS_QUERY = groq`*[_type == "siteSettings"][0] {
+  tagline, footerTagline,
+  navLinks[] { label, href },
+  ctaLabel, ctaHref
+}`;
 
-export const heroQuery = groq`
-  *[_type == "hero"][0] {
-    eyebrow,
-    headline,
-    headlineItalic,
-    subheading,
-    primaryCta,
-    secondaryCta,
-    statNumber,
-    statLabel
-  }
-`;
+const HERO_QUERY = groq`*[_type == "hero"][0] {
+  eyebrow, headlinePart1, headlineEmphasis, headlinePart2,
+  subheading, primaryCta, secondaryCta, statNumber, statLabel
+}`;
 
-export const problemQuery = groq`
-  *[_type == "problemSection"][0] {
-    sectionLabel,
-    headline,
-    headlineHighlight,
-    body,
-    stats[] { number, suffix, description }
-  }
-`;
+const PROBLEM_QUERY = groq`*[_type == "problemSection"][0] {
+  sectionLabel, headlinePart1, headlineEmphasis, body,
+  stats[] { number, suffix, description }
+}`;
 
-export const productQuery = groq`
-  *[_type == "productSection"][0] {
-    sectionLabel,
-    headline,
-    headlineItalic,
-    intro,
-    layers[] { number, title, description }
-  }
-`;
+const PRODUCT_QUERY = groq`*[_type == "productSection"][0] {
+  sectionLabel, headlinePart1, headlineEmphasis, intro,
+  layers[] { number, title, description, icon }
+}`;
 
-export const visionQuery = groq`
-  *[_type == "visionSection"][0] {
-    sectionLabel,
-    headline,
-    headlineItalic,
-    subheading,
-    ctaLabel,
-    ctaHref
-  }
-`;
+const VISION_QUERY = groq`*[_type == "visionSection"][0] {
+  sectionLabel, headlinePart1, headlineEmphasis, body, ctaLabel, ctaHref
+}`;
 
-export const messagingQuery = groq`
-  *[_type == "messagingSection"][0] {
-    sectionLabel,
-    headline,
-    headlineItalic,
-    body,
-    pillars[] { label, text }
-  }
-`;
+const MESSAGING_QUERY = groq`*[_type == "messagingSection"][0] {
+  sectionLabel, headlinePart1, headlineEmphasis, body,
+  pillars[] { label, body }
+}`;
 
-export const sectorsQuery = groq`
-  *[_type == "sectorsSection"][0] {
-    sectionLabel,
-    headline,
-    sectors[] { icon, name, description }
-  }
-`;
+const SECTORS_QUERY = groq`*[_type == "sectorsSection"][0] {
+  sectionLabel, headline,
+  sectors[] { emoji, name, description }
+}`;
 
-export const ctaQuery = groq`
-  *[_type == "ctaSection"][0] {
-    headline,
-    headlineItalic,
-    description,
-    primaryCtaLabel,
-    primaryCtaHref,
-    secondaryCtaLabel,
-    secondaryCtaHref,
-    contactNote
-  }
-`;
+const CTA_QUERY = groq`*[_type == "ctaSection"][0] {
+  headlinePart1, headlineEmphasis, body,
+  primaryLabel, primaryHref, secondaryLabel, secondaryHref, contactLine
+}`;
 
-// Fetch everything in one round-trip for the homepage
-export const homepageQuery = groq`
-  {
-    "settings": *[_type == "siteSettings"][0] {
-      siteName, tagline, footerTagline,
-      navLinks[] { label, href }, ctaLabel, ctaHref
-    },
-    "hero": *[_type == "hero"][0] {
-      eyebrow, headline, headlineItalic, subheading,
-      primaryCta, secondaryCta, statNumber, statLabel
-    },
-    "problem": *[_type == "problemSection"][0] {
-      sectionLabel, headline, headlineHighlight, body,
-      stats[] { number, suffix, description }
-    },
-    "product": *[_type == "productSection"][0] {
-      sectionLabel, headline, headlineItalic, intro,
-      layers[] { number, title, description }
-    },
-    "vision": *[_type == "visionSection"][0] {
-      sectionLabel, headline, headlineItalic, subheading, ctaLabel, ctaHref
-    },
-    "messaging": *[_type == "messagingSection"][0] {
-      sectionLabel, headline, headlineItalic, body,
-      pillars[] { label, text }
-    },
-    "sectors": *[_type == "sectorsSection"][0] {
-      sectionLabel, headline,
-      sectors[] { icon, name, description }
-    },
-    "cta": *[_type == "ctaSection"][0] {
-      headline, headlineItalic, description,
-      primaryCtaLabel, primaryCtaHref,
-      secondaryCtaLabel, secondaryCtaHref, contactNote
-    }
-  }
-`;
+const TICKER_QUERY = groq`*[_type == "ticker"][0] { items }`;
+
+export const PAGE_QUERY = groq`{
+  "siteSettings": ${SITE_SETTINGS_QUERY},
+  "hero": ${HERO_QUERY},
+  "problem": ${PROBLEM_QUERY},
+  "product": ${PRODUCT_QUERY},
+  "vision": ${VISION_QUERY},
+  "messaging": ${MESSAGING_QUERY},
+  "sectors": ${SECTORS_QUERY},
+  "cta": ${CTA_QUERY},
+  "ticker": ${TICKER_QUERY}
+}`;
